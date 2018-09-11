@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class readData {
     private String fileName;
     private int numberOfTree;
-    private ArrayList<Float> totalsForTrees;
+    private ArrayList<Double> totalsForTrees;
 
     public readData(String fileName){
         this.fileName = fileName;
@@ -16,16 +16,16 @@ public class readData {
 
     public void CalculateAvrg(){
         File file = new File(fileName);
-        float[][] data ;
+        double[][] data ;
         try {
             Scanner scan = new Scanner(file);
             int x = scan.nextInt();
             int y = scan.nextInt();
-            data = new float[x][y];
+            data = new double[x][y];
             scan.nextLine();
             for (int row =0 ; row < x ; row++ ){
                 for (int cal = 0; cal < y ; cal++){
-                    data [row][cal] = Float.parseFloat(scan.next());
+                    data [row][cal] = Double.parseDouble(scan.next());
                 }
             }
             scan.nextLine();
@@ -43,12 +43,12 @@ public class readData {
 
                 int xr = xofTree;
                 int yr = yOfTree;
-                float totalForATree = 0;
+                double totalForATree = 0;
 
                     for (int z = 0 ; z < treeLength;z++){
                         try {
                         for (int l = 0 ;l < treeLength;l++){
-                        float ssss = data[xofTree][yOfTree];
+                        double ssss = data[xofTree][yOfTree];
                         totalForATree += ssss;
                         yOfTree++;}
                         }catch (ArrayIndexOutOfBoundsException e){ }
@@ -71,7 +71,7 @@ public class readData {
     public void countMean(){
 
         float tot = 0;
-        for (float x:totalsForTrees) {
+        for (double x:totalsForTrees) {
             tot += x;
         }
         System.out.println(tot / numberOfTree);
