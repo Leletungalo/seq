@@ -2,7 +2,6 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,7 +23,6 @@ public class readData {
             int y = scan.nextInt();
             data = new float[x][y];
             scan.nextLine();
-            int rowcount;
             for (int row =0 ; row < x ; row++ ){
                 for (int cal = 0; cal < y ; cal++){
                     data [row][cal] = Float.parseFloat(scan.next());
@@ -45,7 +43,6 @@ public class readData {
 
                 int xr = xofTree;
                 int yr = yOfTree;
-                int count = 0;
                 float totalForATree = 0;
 
                     for (int z = 0 ; z < treeLength;z++){
@@ -78,8 +75,5 @@ public class readData {
             tot += x;
         }
         System.out.println(tot / numberOfTree);
-       /* for (int i = 0;i < totalsForTrees.size();i++){
-            tot = totalsForTrees.get(i);
-        }*/
     }
 }
