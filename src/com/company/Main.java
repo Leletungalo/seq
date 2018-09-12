@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-    static long startTime = 0;
+    private static long startTime = 0;
 
     private static void tick(){
         startTime = System.currentTimeMillis();
@@ -23,7 +23,7 @@ public class Main {
         System.out.println("Time is 0: " + vvv);
         System.out.println();
 
-        tick();
+      /*  tick();
         readData.CalculateAvrg();
         readData.countMean();
         float vvv1 = tock();
@@ -57,7 +57,7 @@ public class Main {
         readData.CalculateAvrg();
         readData.countMean();
         float vvv5 = tock();
-        System.out.println("Time is 5 : " + vvv5);
+        System.out.println("Time is 5 : " + vvv5);*/
 
     }
 }

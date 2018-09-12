@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class readData {
     private String fileName;
     private int numberOfTree;
+    public double totalForAllTree;
     private ArrayList<Double> totalsForTrees;
 
     public readData(String fileName){
@@ -32,6 +33,7 @@ public class readData {
             numberOfTree = scan.nextInt();
             totalsForTrees = new ArrayList<>(numberOfTree);
             scan.nextLine();
+            totalForAllTree = 0;
 
             int xofTree;
             int yOfTree;
@@ -56,6 +58,7 @@ public class readData {
                         xofTree = xr + 1;
                         xr++;
                     }
+                   totalForAllTree += totalForATree;
 
                totalsForTrees.add(totalForATree);
 
@@ -69,11 +72,6 @@ public class readData {
     }
 
     public void countMean(){
-
-        float tot = 0;
-        for (double x:totalsForTrees) {
-            tot += x;
-        }
-        System.out.println(tot / numberOfTree);
+        System.out.println(totalForAllTree / numberOfTree);
     }
 }
