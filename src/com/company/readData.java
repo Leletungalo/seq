@@ -56,10 +56,7 @@ public class readData {
                 totalForAllTree += totalForATree;
 
                 totalsForTrees.add(totalForATree);
-
             }
-           // System.out.println(totalsForTrees.toString());
-
         }catch (FileNotFoundException e){
             System.out.println("not found");
             e.getStackTrace();
