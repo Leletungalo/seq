@@ -6,18 +6,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class readData {
-    private String fileName;
     private int numberOfTree;
-    public double totalForAllTree;
+    private double totalForAllTree;
     private ArrayList<Double> totalsForTrees;
 
     public readData(String fileName){
-        this.fileName = fileName;
-    }
-
-    public void CalculateAvrg(){
         File file = new File(fileName);
-        double[][] data ;
+        double[][] data;
         try {
             Scanner scan = new Scanner(file);
             int x = scan.nextInt();
@@ -47,28 +42,34 @@ public class readData {
                 int yr = yOfTree;
                 double totalForATree = 0;
 
-                    for (int z = 0 ; z < treeLength;z++){
-                        try {
+                for (int z = 0 ; z < treeLength;z++){
+                    try {
                         for (int l = 0 ;l < treeLength;l++){
-                        double ssss = data[xofTree][yOfTree];
-                        totalForATree += ssss;
-                        yOfTree++;}
-                        }catch (ArrayIndexOutOfBoundsException e){ }
-                        yOfTree = yr;
-                        xofTree = xr + 1;
-                        xr++;
-                    }
-                   totalForAllTree += totalForATree;
+                            double ssss = data[xofTree][yOfTree];
+                            totalForATree += ssss;
+                            yOfTree++;}
+                    }catch (ArrayIndexOutOfBoundsException e){ }
+                    yOfTree = yr;
+                    xofTree = xr + 1;
+                    xr++;
+                }
+                totalForAllTree += totalForATree;
 
-               totalsForTrees.add(totalForATree);
+                totalsForTrees.add(totalForATree);
 
             }
-           System.out.println(totalsForTrees.toString());
+           // System.out.println(totalsForTrees.toString());
 
         }catch (FileNotFoundException e){
             System.out.println("not found");
             e.getStackTrace();
         }
+    }
+
+    public void CalculateAvrg(){
+      for (int i = 0; i < totalsForTrees.size(); i++){
+          System.out.println(totalsForTrees.get(i));
+      }
     }
 
     public void countMean(){
