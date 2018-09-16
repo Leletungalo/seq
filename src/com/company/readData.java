@@ -63,13 +63,18 @@ public class readData {
         }
     }
 
-    public void CalculateAvrg(){
-      for (int i = 0; i < totalsForTrees.size(); i++){
-          System.out.println(totalsForTrees.get(i));
-      }
+    /**returns an arrayList with all the total for the trees.
+     */
+    public ArrayList<Double> getTotalForAllTree(){
+        return totalsForTrees;
+    }
+    /**Calculate the mean the all the the tree
+     * */
+    public Double countMean(){
+        return  (totalForAllTree / numberOfTree);
     }
 
-    public void countMean(){
-        System.out.println(totalForAllTree / numberOfTree);
+    public int getNumberOfTree() {
+        return numberOfTree;
     }
 }
